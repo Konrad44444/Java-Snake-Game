@@ -1,12 +1,42 @@
-import javax.swing.JPanel;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.Random;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements ActionListener{
 
     public GamePanel() {
-        
+
+    }
+
+    public void startGame() {
+
+    }
+
+    public void paintComponent(Graphics g) {
+
+    }
+
+    public void draw(Graphics g) {
+
+    }
+
+    public void move() {
+
+    }
+
+    public void checkApple() {
+
+    }
+
+    public void checkCollision() {
+
+    }
+
+    public void gameOver(Graphics g) {
+
     }
 
     @Override
@@ -15,4 +45,10 @@ public class GamePanel extends JPanel implements ActionListener{
         throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
     
+    public class MyKeyAdapter extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {
+            
+        }
+    }
 }
