@@ -3,8 +3,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.Random;
 
-import javax.swing.JPanel;
-
 public class GamePanel extends JPanel implements ActionListener{
 
     static final int SCREEN_WIDTH = 600;
@@ -31,7 +29,7 @@ public class GamePanel extends JPanel implements ActionListener{
     public GamePanel() {
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-        this.setBackground(Color.BLACK);
+        this.setBackground(new Color(18,47,159));
         this.setFocusable(true);
         this.addKeyListener(new MyKeyAdapter());
 
@@ -53,6 +51,7 @@ public class GamePanel extends JPanel implements ActionListener{
     public void draw(Graphics g) {
         if(running) {
             // loop for drawing grid on screen
+            g.setColor(new Color(18,47,103));
             for(int i = 0; i < SCREEN_HEIGHT/UNIT_SIZE; i++) {
                 g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
                 g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
@@ -164,7 +163,7 @@ public class GamePanel extends JPanel implements ActionListener{
 
     public void gameOver(Graphics g) {
         // game over text
-        g.setColor(Color.red);
+        g.setColor(new Color(174,28,18));
         g.setFont(new Font("Ink Free", Font.BOLD, 75));
         FontMetrics metrics1 = getFontMetrics(g.getFont());
         g.drawString("Game Over", (SCREEN_WIDTH - metrics1.stringWidth("Game Over")) / 2, SCREEN_HEIGHT / 2);
