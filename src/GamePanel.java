@@ -74,6 +74,14 @@ public class GamePanel extends JPanel implements ActionListener{
                 }
             }
 
+            // score text
+            g.setColor(Color.white);
+            g.setFont(new Font("Ink Free", Font.BOLD, 30));
+
+            // used to center string
+            FontMetrics metrics = getFontMetrics(g.getFont());
+            g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: " + applesEaten)) / 2, g.getFont().getSize());
+
         } else {
             gameOver(g);
         }
@@ -158,10 +166,14 @@ public class GamePanel extends JPanel implements ActionListener{
         // game over text
         g.setColor(Color.red);
         g.setFont(new Font("Ink Free", Font.BOLD, 75));
+        FontMetrics metrics1 = getFontMetrics(g.getFont());
+        g.drawString("Game Over", (SCREEN_WIDTH - metrics1.stringWidth("Game Over")) / 2, SCREEN_HEIGHT / 2);
 
-        // used to center string
-        FontMetrics metrics = getFontMetrics(g.getFont());
-        g.drawString("Game Over", (SCREEN_WIDTH - metrics.stringWidth("Game Over")) / 2, SCREEN_HEIGHT / 2);
+        // score text
+        g.setColor(Color.white);
+        g.setFont(new Font("Ink Free", Font.BOLD, 50));
+        FontMetrics metrics2 = getFontMetrics(g.getFont());
+        g.drawString("Score: " + applesEaten, (SCREEN_WIDTH - metrics2.stringWidth("Score: " + applesEaten)) / 2, g.getFont().getSize());
     }
 
     @Override
